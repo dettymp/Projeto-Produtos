@@ -1,0 +1,247 @@
+object FrmProduto: TFrmProduto
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Produtos'
+  ClientHeight = 443
+  ClientWidth = 753
+  Color = clCream
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 8
+    Width = 148
+    Height = 19
+    Caption = 'Cadastro de Produtos'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Calibri'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 16
+    Top = 33
+    Width = 729
+    Height = 345
+    DataSource = DS_Produto
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'codigo'
+        Title.Caption = 'C'#243'digo Produto'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 85
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o Produto'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 140
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desc_categ'
+        Title.Caption = 'Categoria'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'fabricante'
+        Title.Caption = 'Fabricante'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 120
+        Visible = True
+      end
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'qtde'
+        Title.Caption = 'Quantidade'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'unid_med'
+        Title.Caption = 'Unidade Medida'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 90
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'dt_cad'
+        Title.Caption = 'Data Cadastro'
+        Title.Font.Charset = ANSI_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -12
+        Title.Font.Name = 'Calibri'
+        Title.Font.Style = [fsBold]
+        Width = 85
+        Visible = True
+      end>
+  end
+  object BtnInserir: TButton
+    Left = 16
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = '&Inserir'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = BtnInserirClick
+  end
+  object BtnEditar: TButton
+    Left = 120
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = '&Editar'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = BtnEditarClick
+  end
+  object BtnDeletar: TButton
+    Left = 224
+    Top = 384
+    Width = 75
+    Height = 25
+    Caption = '&Deletar'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    OnClick = BtnDeletarClick
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Password=tequila;Persist Security Info=True;U' +
+      'ser ID=postgres;Data Source=odbcProdutos'
+    LoginPrompt = False
+    Left = 608
+    Top = 264
+  end
+  object ADOQryProd: TADOQuery
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * '
+      'from cad_produto '
+      'left join tb_categoria on categoria = cod_categ'
+      'order by codigo;')
+    Left = 576
+    Top = 320
+    object ADOQryProdcodigo: TIntegerField
+      FieldName = 'codigo'
+    end
+    object ADOQryProddescricao: TWideStringField
+      FieldName = 'descricao'
+      Size = 100
+    end
+    object ADOQryProdcategoria: TIntegerField
+      FieldName = 'categoria'
+    end
+    object ADOQryProdfabricante: TWideStringField
+      FieldName = 'fabricante'
+      Size = 100
+    end
+    object ADOQryProdqtde: TIntegerField
+      FieldName = 'qtde'
+    end
+    object ADOQryProdunid_med: TWideStringField
+      FieldName = 'unid_med'
+      Size = 50
+    end
+    object ADOQryProddt_cad: TDateField
+      FieldName = 'dt_cad'
+    end
+    object ADOQryProdcod_categ: TIntegerField
+      FieldName = 'cod_categ'
+    end
+    object ADOQryProddesc_categ: TWideStringField
+      FieldName = 'desc_categ'
+      Size = 100
+    end
+  end
+  object DS_Produto: TDataSource
+    DataSet = ADOQryProd
+    Left = 640
+    Top = 320
+  end
+  object ADOQry_Op: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 576
+    Top = 376
+  end
+end

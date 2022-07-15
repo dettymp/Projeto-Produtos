@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/07/14 22:01:18.000.552,=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/14 22:04:48.000.009,=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/07/14 22:13:33.000.458,C:\Users\Detty\Documents\Delphi\Projeto-Produtos\UFrmProduto.pas=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/07/14 22:13:33.000.458,C:\Users\Detty\Documents\Delphi\Projeto-Produtos\UFrmProduto.dfm=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/07/14 22:13:46.000.841,C:\Users\Detty\Documents\Delphi\Projeto-Produtos\UFrmCadProd.dfm=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2022/07/14 22:13:46.000.841,C:\Users\Detty\Documents\Delphi\Projeto-Produtos\UFrmCadProd.pas=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/07/14 22:14:13.000.704,C:\Users\Detty\Documents\Delphi\Projeto-Produtos\Produtos.dproj=C:\Users\Detty\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
